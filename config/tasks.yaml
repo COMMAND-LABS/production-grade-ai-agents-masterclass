@@ -1,0 +1,16 @@
+research_task:
+  description: >
+    Conduct thorough research about Haiti across the websites provided. Do not hallucinate or fabricate any information.
+    
+    - Le Nouvelliste (https://lenouvelliste.com/)
+    - Loop News Haiti (https://haiti.loopnews.com/)
+    - The Haitian Times (https://haitiantimes.com/)
+    - Ayibopost (https://ayibopost.com/)
+    - Radio France Internationale (https://www.rfi.fr/en/tag/haiti/)
+    - New York Times (https://www.nytimes.com/topic/destination/haiti)
+    - CNN (https://www.cnn.com/search?q=Haiti&from=0&size=10&page=1&sort=newest&types=all&section=)
+
+    Priotize relevant information given the current date is { current_date }.
+  expected_output: >
+    5 Bulletpoints representing the most relevant developments retrieved from the various news outlets. Include a summary of 
+    each development and include detailed sources, links and citations so that the information can be verified.
