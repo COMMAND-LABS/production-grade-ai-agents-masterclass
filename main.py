@@ -10,6 +10,8 @@ import yaml
 from helpers.replace_yaml_variables import replace_yaml_variables
 from application_schema.news_results import NewsResults
 
+from helpers.send_email import send_email
+
 # vvv YAML Configuration vvv
 current_date = datetime.now().strftime("%Y-%m-%d") # Include current date for context
 replacements = {
@@ -65,6 +67,8 @@ def main():
 
     print('FINAL OUTPUT')
     print(crew_output.raw)
+
+    send_email()
     
 if __name__ == "__main__":
     try:
