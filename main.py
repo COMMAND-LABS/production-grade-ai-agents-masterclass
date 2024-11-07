@@ -4,6 +4,7 @@ from helpers.format_news_for_email import format_news_for_email
 from helpers.is_valid_email import is_valid_email
 load_dotenv()
 
+import os
 import json
 from datetime import datetime
 
@@ -14,6 +15,9 @@ from helpers.replace_yaml_variables import replace_yaml_variables
 from application_schema.news_results import NewsResults
 
 from helpers.send_email import send_email
+
+import agentops
+agentops.init(os.getenv("AGENTOPS_API_KEY"))
 
 # vvv YAML Configuration vvv
 current_date = datetime.now().strftime("%Y-%m-%d") # Include current date for context
