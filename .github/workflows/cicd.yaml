@@ -46,4 +46,5 @@ jobs:
           gcloud run jobs deploy ${{ env.JOB_NAME }} \
           --image ${{ env.DOCKER_IMAGE_URL }}:${{ env.IMAGE_TAG }} \
           --region ${{ env.CLOUD_RUN_REGION }} \
+          --set-secrets "OPENAI_API_KEY=projects/${{ env.PROJECT_NUMBER }}/secrets/OPENAI_API_KEY:latest,MAILGUN_API_KEY=projects/${{ env.PROJECT_NUMBER }}/secrets/MAILGUN_API_KEY:latest" \
           --project ${{ env.PROJECT_ID }}

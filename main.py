@@ -1,4 +1,7 @@
 from dotenv import load_dotenv
+
+from helpers.format_news_for_email import format_news_for_email
+from helpers.is_valid_email import is_valid_email
 load_dotenv()
 
 import json
@@ -51,8 +54,8 @@ def main():
     research_task = Task(
         description=tasks_yaml["research_task"]["description"],
         expected_output=tasks_yaml["research_task"]["expected_output"],
-        # output_pydantic=NewsResults,
-        output_file='report.md'
+        output_pydantic=NewsResults,
+        output_file='report.json'
     )
 
     crew = Crew(
@@ -68,7 +71,12 @@ def main():
     print('FINAL OUTPUT')
     print(crew_output.raw)
 
-    send_email()
+    email_list = ["tad@cmdlabs.io"]
+    for email in email_list:
+        if bool(email) and is_valid_email(email):
+            send_email([email.strip()], format_news_for_email(crew_output.pydantic, current_date))
+
+    
     
 if __name__ == "__main__":
     try:
