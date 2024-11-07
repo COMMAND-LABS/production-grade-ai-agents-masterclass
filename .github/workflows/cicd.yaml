@@ -48,5 +48,5 @@ jobs:
           --region ${{ env.CLOUD_RUN_REGION }} \
           --set-secrets "OPENAI_API_KEY=projects/${{ env.PROJECT_NUMBER }}/secrets/OPENAI_API_KEY:latest,MAILGUN_API_KEY=projects/${{ env.PROJECT_NUMBER }}/secrets/MAILGUN_API_KEY:latest" \
           --memory 1Gi \
-          --maxRetries 5 \
+          --max-retries 5 \
           --project ${{ env.PROJECT_ID }}
