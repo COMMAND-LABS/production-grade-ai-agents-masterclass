@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
+load_dotenv()
 
 from helpers.format_news_for_email import format_news_for_email
 from helpers.is_valid_email import is_valid_email
-load_dotenv()
 
 import os
 import json
@@ -18,6 +18,8 @@ from helpers.send_email import send_email
 
 import agentops
 agentops.init(os.getenv("AGENTOPS_API_KEY"))
+
+emails=(os.getenv("COMMA_SEPARATED_EMAILS") or "")
 
 # vvv YAML Configuration vvv
 current_date = datetime.now().strftime("%Y-%m-%d") # Include current date for context
@@ -75,7 +77,7 @@ def main():
     print('FINAL OUTPUT')
     print(crew_output.raw)
 
-    email_list = ["tad@cmdlabs.io"]
+    email_list = emails.split(",")
     for email in email_list:
         if bool(email) and is_valid_email(email):
             send_email([email.strip()], format_news_for_email(crew_output.pydantic, current_date))

@@ -1,14 +1,10 @@
 research_task:
   description: >
-    Conduct thorough research about Haiti across the websites provided. Do not hallucinate or fabricate any information.
+    Conduct thorough research about Insurance Technology across the websites provided. Do not hallucinate or fabricate any information.
     
-    - Le Nouvelliste (https://lenouvelliste.com/)
-    - Loop News Haiti (https://haiti.loopnews.com/)
-    - The Haitian Times (https://haitiantimes.com/)
-    - Ayibopost (https://ayibopost.com/)
-    - Radio France Internationale (https://www.rfi.fr/en/tag/haiti/)
-    - New York Times (https://www.nytimes.com/topic/destination/haiti)
-    - CNN (https://www.cnn.com/search?q=Haiti&from=0&size=10&page=1&sort=newest&types=all&section=)
+    - Insurtech Insights (https://www.insurtechinsights.com/news-insights/artificial-intelligence/) & make sure research is done by the Insurtech Insights Reporter.
+    - InsurTech News (https://insurtechnews.com/) & make sure research is done by the InsurTech News reporter.
+    - InsurTech Digital (https://insurtechdigital.com/) & make sure research is done by the InsurTech Digital.
 
     Priotize relevant information given the current date is { current_date }.
   expected_output: >
